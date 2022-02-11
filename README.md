@@ -33,7 +33,8 @@ https://docs.aws.amazon.com/apigateway/latest/developerguide/how-to-generate-sdk
 Build a Dining Concierge chatbot using Amazon Lex.
 Create a new bot using the Amazon Lex service. Read up the documentation on all things Lex, for more information: https://docs.aws.amazon.com/lex/latest/dg/getting-started.html (Links to an external site.)  
 Create a Lambda function (LF1) and use it as a code hook for Lex, which essentially entails the invocation of your Lambda before Lex responds to any of your requests -- this gives you the chance to manipulate and validate parameters as well as format the bot’s responses. More documentation on Lambda code hooks at the following link: https://docs.aws.amazon.com/lex/latest/dg/using-lambda.html (Links to an external site.) 
-Bot Requirements:
+
+# Bot Requirements:
 Implement at least the following three intents:
 GreetingIntent
 ThankYouIntent
@@ -49,13 +50,13 @@ Phone number
 Based on the parameters collected from the user, push the information collected from the user (location, cuisine, etc.) to an SQS queue (Q1). More on SQS queues here: https://aws.amazon.com/sqs/ (Links to an external site.)
 Also confirm to the user that you received their request and that you will notify them over SMS once you have the list of restaurant suggestions.
 
-Integrate the Lex chatbot into your chat API
+# Integrate the Lex chatbot into your chat API
 Use the AWS SDK to call your Lex chatbot from the API Lambda (LF0).
 When the API receives a request, you should 1. extract the text message from the API request, 2. send it to your Lex chatbot, 3. wait for the response, 4. send back the response from Lex as the API response.
 
 Use the Yelp API to collect 5,000+ random restaurants from Manhattan.
 Use the following tools:
-Yelp API
+# Yelp API
 Get restaurants by your self-defined cuisine types 
 You can do this by adding cuisine type in the search term ( ex. Term: chinese restaurants)
 Each cuisine type should have 1,000 restaurants or so.
@@ -82,12 +83,12 @@ In summary, based on a conversation with the customer, your LEX chatbot will ide
 
  
 
-Extra Credit: 10 pts
+# Extra Credit: 10 pts
 
 
 Implement state for your concierge application, such that it remembers your last search for both location and category. When a user returns to the chat, they should automatically receive a recommendation based on their previous search. You can use DynamoDB to store intermediary state information and a separate Lambda function to handle the recommendation based on the last search.
 
-Example Interaction
+# Example Interaction
 
 User: Hello
 
